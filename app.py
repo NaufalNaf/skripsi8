@@ -18,13 +18,13 @@ weight = st.number_input('Weight (in kg)', min_value=20, max_value=200, value=70
 gender = st.selectbox('Gender', ('Female', 'Male'))
 
 # Konversi gender ke bentuk numerik
-gender_num = 1 if gender == 'Female' else 0
+gender_num = 0 if gender == 'Female' else 1
 
 if st.button('Predict'):
     st.write("Button clicked.")
 
     # Buat array input
-    input_data = np.array([[height, weight, gender]])
+    input_data = np.array([[height, weight, gender_num]])
 
     # Debug: Tampilkan data input
     st.write(f'Input data: {input_data}')
